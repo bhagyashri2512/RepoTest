@@ -1,5 +1,4 @@
 package utilities;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -55,42 +54,39 @@ public static String getDataFromExcelSheet(String filepath,String sheetname,int 
 		
 	}
 
-public static  void captureScreenshot(String TestID) throws InterruptedException, IOException
-{
-	WebDriver driver = new ChromeDriver();
-	  driver.get("https://www.gmail.com"); 
-	  Thread.sleep(3000); 
-	  driver.manage().window().maximize();
-	 for(int i=0;i<5;i++)
-	 {
-		 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");  
-			String currentDateTime=dateFormat.format(new Date());
-		 
-	 TakesScreenshot ts=(TakesScreenshot)driver;
-	 File src=ts.getScreenshotAs(OutputType.FILE);
-	File dest=new File("C:\\Users\\nitin\\Documents\\Bhagya_Testing\\Screenshot\\Test"+TestID+currentDateTime+".jpeg");
-	// File dest=new File("C:\\Users\\nitin\\Documents\\Bhagya_Testing\\Screenshot\\Test"+Math.random()+".jpeg");
-	 FileHandler.copy(src, dest);
-	 Thread.sleep(1000); 
-	 
-	 }	 
-}
+//public static  void captureScreenshot(String TestID) throws InterruptedException, IOException
+//{
+//	WebDriver driver = new ChromeDriver();
+//	  driver.get("https://www.gmail.com"); 
+//	  Thread.sleep(3000); 
+//	  driver.manage().window().maximize();
+//	 for(int i=0;i<5;i++)
+//	 {
+//		 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");  
+//			String currentDateTime=dateFormat.format(new Date());
+//		 
+//	 TakesScreenshot ts=(TakesScreenshot)driver;
+//	 File src=ts.getScreenshotAs(OutputType.FILE);
+//	 File dest=new File("C:\\Users\\nitin\\Documents\\Bhagya_Testing\\Screenshot\\Test"+TestID+currentDateTime+".jpeg");
+//	
+//	 FileHandler.copy(src, dest);
+//	 Thread.sleep(1000); 
+//	 
+//	 }	 
+//}
 
-	private static String replace(String format, String string, String string2) {
-		// TODO Auto-generated method stub
-		return null;
-}
+	
 
 public static void main(String[] args) throws EncryptedDocumentException, IOException, InterruptedException {
 	
 	
-	String filepath="C:\\Users\\nitin\\Documents\\Bhagya_Testing\\Automation\\TestData.xlsx";
+	String filepath="src\\test\\resources\\DataResource\\TestData.xlsx";
     String sheetname="Data";
-    int row=4;
-    int cell=1;
+    int row=2;
+    int cell=2;
 	String r=getDataFromExcelSheet(filepath,sheetname,row,cell);
-	System.out.println(r);	
-	captureScreenshot("G123");
+	//System.out.println(r);	
+	//captureFailedScreenshot("G123");
 	
 }
 public static void captureFailScreenshot(WebDriver driver,String testId) throws IOException, InterruptedException
@@ -101,9 +97,9 @@ public static void captureFailScreenshot(WebDriver driver,String testId) throws 
 		 
 	     TakesScreenshot ts=(TakesScreenshot)driver;
 	     File src=ts.getScreenshotAs(OutputType.FILE);
-	    // File dest=new File("C:\\Users\\nitin\\Documents\\Bhagya_Testing\\Screenshot\\Test"+testId+e+".jpeg");
-	     File dest=new File("test-output\\FailedTestScreenshot"+testId+currentDateTime+".png");
-	// File dest=new File("C:\\Users\\nitin\\Documents\\Bhagya_Testing\\Screenshot\\Test"+Math.random()+".jpeg");
+	   
+	     File dest=new File("test-output\\FailedTestScreenshot\\"+testId+currentDateTime+".png");
+	
 	 FileHandler.copy(src, dest);
 	 Thread.sleep(1000); 
 	 

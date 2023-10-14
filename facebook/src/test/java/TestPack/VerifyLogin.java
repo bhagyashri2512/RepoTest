@@ -37,7 +37,7 @@ private LoginOrSignUpPage loginOrSignUpPage;
 		{
 			if(browserName.equals("Chrome"))
 			{
-			System.setProperty("WebDriver.chrome.driver","C:\\Users\\nitin\\Downloads\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
+			
 			driver=launchChrome();
 			
 			//			 ChromeOptions options=new ChromeOptions();
@@ -48,7 +48,7 @@ private LoginOrSignUpPage loginOrSignUpPage;
 
 			if(browserName.equals("Edge"))
 			{
-			 System.setProperty("WebDriver.edge.driver","C:\\Users\\nitin\\Downloads\\IEDriverServer_Win32_4.11.0\\IEDriverServer.exe");
+			 
 			 driver=launchEdge();
 			// driver=new EdgeDriver();
 			   
