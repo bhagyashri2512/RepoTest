@@ -9,8 +9,8 @@
           <include name="closeBrowser"/>
           <include name="creatingPOMObject"/>
           <include name="clearObject"/>
-          <include name="launchBrowser"/>
           <include name="logOutFromApplication"/>
+          <include name="launchBrowser"/>
           <include name="openLoginPage"/>
           <include name="verifyLoginContinuePage"/>
         </methods>
